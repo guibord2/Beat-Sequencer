@@ -1,0 +1,11 @@
+module I2S(logic LRCLK, SCLK
+			  logic [31:0]);
+
+
+
+
+
+
+
+
+endmodule

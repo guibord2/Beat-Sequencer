@@ -1,0 +1,29 @@
+module mux_4to1_concatenation  ( input		[6:0]select,
+											input			[15:0] bass_drum, snare, clap, hihat, cymbal, tom1, tom2,
+											output logic		[15:0] dout);
+						
+		
+		//s: first bit is CALBR, second is shift signal
+		// 17 bit parallel multiplexer implemented using case statement
+		always_comb
+		begin
+			dout = 16'h0;
+				
+			if (select[0])
+				dout = dout+bass_drum;
+			if (select[1])
+				dout = dout + snare;
+			if (select[2])
+				dout = dout + clap;
+			if (select[3])
+				dout = dout + hihat;
+			if (select[4])
+				dout = dout + cymbal;
+			if (select[5])
+				dout = dout + tom1;
+			if (select[6])
+				dout = dout + tom2;
+		end
+		
+		
+endmodule
